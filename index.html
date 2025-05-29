@@ -5,27 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Samim Reza - Portfolio</title>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      
       :root {
-        --primary-color: #2c3e50;
-        --secondary-color: #3498db;
-        --accent-color: #e74c3c;
-        --light-color: #ecf0f1;
-        --dark-color: #2c3e50;
-        --text-color: #333;
-        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        --bg-dark: #0a0a0f;
+        --bg-card: rgba(255, 255, 255, 0.05);
+        --bg-card-hover: rgba(255, 255, 255, 0.08);
+        --text-primary: #ffffff;
+        --text-secondary: #a0a0a0;
+        --text-accent: #667eea;
+        --border: rgba(255, 255, 255, 0.1);
+        --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        --glow: 0 0 20px rgba(102, 126, 234, 0.3);
       }
 
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
 
       body {
-        background-color: #f5f5f5;
-        color: var(--text-color);
+        font-family: 'Inter', sans-serif;
+        background: var(--bg-dark);
+        color: var(--text-primary);
         line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Animated background */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+          radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(245, 87, 108, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 40% 80%, rgba(0, 242, 254, 0.1) 0%, transparent 50%);
+        z-index: -1;
+        animation: backgroundShift 20s ease-in-out infinite;
+      }
+
+      @keyframes backgroundShift {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.8; }
       }
 
       .container {
@@ -34,15 +63,11 @@
         padding: 0 20px;
       }
 
+      /* Header */
       header {
-        background: linear-gradient(
-          135deg,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        color: white;
-        padding: 60px 0;
+        padding: 100px 0 80px;
         text-align: center;
+        position: relative;
       }
 
       .profile-container {
@@ -50,261 +75,453 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        gap: 40px;
+        gap: 60px;
+        animation: fadeInUp 1s ease-out;
       }
 
       .profile-image {
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
         border-radius: 50%;
-        border: 5px solid white;
-        box-shadow: var(--shadow);
-        background-color: #e0e0e0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
+        background: var(--primary-gradient);
+        padding: 4px;
+        box-shadow: var(--shadow), var(--glow);
+        animation: float 6s ease-in-out infinite;
+        position: relative;
+      }
+
+      .profile-image::before {
+        content: '';
+        position: absolute;
+        inset: -4px;
+        border-radius: 50%;
+        background: var(--primary-gradient);
+        z-index: -1;
+        filter: blur(20px);
+        opacity: 0.7;
+      }
+
+      .profile-image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        background-color: #333;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
       }
 
       .profile-info h1 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: textGlow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes textGlow {
+        from { filter: drop-shadow(0 0 5px rgba(102, 126, 234, 0.5)); }
+        to { filter: drop-shadow(0 0 15px rgba(102, 126, 234, 0.8)); }
       }
 
       .profile-info p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
+        font-size: 1.3rem;
+        color: var(--text-secondary);
+        margin-bottom: 30px;
+        font-weight: 300;
       }
 
       .contact-links {
         display: flex;
-        gap: 15px;
+        gap: 20px;
         justify-content: center;
-        margin-top: 20px;
+        flex-wrap: wrap;
       }
 
       .contact-links a {
-        color: white;
+        padding: 12px 24px;
+        border-radius: 50px;
         text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        transition: all 0.3s ease;
+        font-weight: 500;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-links a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        transition: left 0.5s;
+      }
+
+      .contact-links a:hover::before {
+        left: 100%;
       }
 
       .contact-links a:hover {
-        color: var(--light-color);
-        transform: translateY(-2px);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
       }
 
+      .email { background: var(--secondary-gradient); color: white; }
+      .facebook { background: linear-gradient(135deg, #3b5998, #8b9dc3); color: white; }
+      .github { background: linear-gradient(135deg, #333, #666); color: white; }
+      .linkedin { background: linear-gradient(135deg, #0077b5, #00a0dc); color: white; }
+
+      /* Main content */
       main {
-        padding: 50px 0;
+        padding: 60px 0;
       }
 
-      section {
+      .section-card {
+        background: var(--bg-card);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 40px;
         margin-bottom: 40px;
-        background-color: white;
-        border-radius: 8px;
-        padding: 30px;
         box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        animation: fadeInUp 0.6s ease-out;
       }
 
-      h2 {
-        color: var(--primary-color);
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid var(--secondary-color);
+      .section-card:hover {
+        background: var(--bg-card-hover);
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
       }
 
-      .experience-item,
-      .education-item,
-      .project-item {
-        margin-bottom: 25px;
+      .section-title {
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 30px;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
       }
 
-      .experience-item:last-child,
-      .education-item:last-child,
-      .project-item:last-child {
-        margin-bottom: 0;
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: var(--accent-gradient);
+        border-radius: 2px;
+      }
+
+      /* About section */
+      .about-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+      /* Experience & Education items */
+      .timeline-item {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 30px;
+        border-left: 2px solid var(--border);
+      }
+
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -8px;
+        top: 0;
+        width: 14px;
+        height: 14px;
+        background: var(--primary-gradient);
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
       }
 
       .item-header {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
         margin-bottom: 10px;
+        gap: 20px;
       }
 
       .item-title {
-        font-weight: bold;
-        color: var(--secondary-color);
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--text-primary);
       }
 
       .item-date {
-        color: #777;
+        font-size: 0.9rem;
+        color: var(--text-accent);
+        background: rgba(102, 126, 234, 0.1);
+        padding: 4px 12px;
+        border-radius: 20px;
+        white-space: nowrap;
       }
 
       .item-subtitle {
         font-style: italic;
-        margin-bottom: 10px;
+        color: var(--text-secondary);
+        margin-bottom: 15px;
+        font-size: 1.1rem;
       }
 
-      ul {
+      .timeline-item ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .timeline-item li {
+        position: relative;
         padding-left: 20px;
+        margin-bottom: 8px;
+        color: var(--text-secondary);
       }
 
-      li {
-        margin-bottom: 5px;
+      .timeline-item li::before {
+        content: '▶';
+        position: absolute;
+        left: 0;
+        color: var(--text-accent);
+        font-size: 0.8rem;
       }
 
-      .skills-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 15px;
-      }
-
-      .skill-tag {
-        background-color: var(--secondary-color);
-        color: white;
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-      }
-
-      .skill-tag:hover {
-        background-color: var(--primary-color);
-        transform: translateY(-2px);
-      }
-
-      .achievements-container {
+      /* Skills */
+      .skills-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
         margin-top: 20px;
       }
 
-      .achievement-card {
-        background-color: var(--light-color);
-        padding: 15px;
-        border-radius: 8px;
-        border-left: 4px solid var(--accent-color);
-      }
-
-      footer {
-        background-color: var(--primary-color);
-        color: white;
+      .skill-tag {
+        background: var(--bg-card);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--border);
+        color: var(--text-primary);
+        padding: 12px 20px;
+        border-radius: 25px;
         text-align: center;
-        padding: 20px 0;
-        margin-top: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
       }
 
+      .skill-tag::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--primary-gradient);
+        transition: left 0.3s ease;
+        z-index: -1;
+      }
+
+      .skill-tag:hover::before {
+        left: 0;
+      }
+
+      .skill-tag:hover {
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+      }
+
+      /* Projects */
+      .project-item {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 25px;
+        transition: all 0.3s ease;
+      }
+
+      .project-item:hover {
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateX(10px);
+        border-left: 4px solid var(--text-accent);
+      }
+
+      /* Achievements */
+      .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 25px;
+      }
+
+      .achievement-card {
+        background: var(--bg-card);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        padding: 25px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .achievement-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--secondary-gradient);
+      }
+
+      .achievement-card:hover {
+        background: var(--bg-card-hover);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .achievement-card strong {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: var(--text-primary);
+      }
+
+      .achievement-card p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      /* Footer */
+      footer {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(20px);
+        border-top: 1px solid var(--border);
+        text-align: center;
+        padding: 40px 0;
+        margin-top: 80px;
+      }
+
+      footer p {
+        color: var(--text-secondary);
+        margin-bottom: 10px;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
       @media (max-width: 768px) {
         .profile-container {
           flex-direction: column;
-          text-align: center;
+          gap: 40px;
+        }
+
+        .profile-info h1 {
+          font-size: 2.5rem;
         }
 
         .item-header {
           flex-direction: column;
-          gap: 5px;
+          gap: 10px;
         }
 
-        .achievements-container {
+        .contact-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .contact-links a {
+          width: 200px;
+          text-align: center;
+        }
+
+        .skills-grid {
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        }
+
+        .achievements-grid {
           grid-template-columns: 1fr;
         }
+
+        .section-card {
+          padding: 25px;
+        }
+      }
+
+      /* Scroll animations */
+      .section-card {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: none;
+      }
+
+      .section-card.animate {
+        animation: fadeInUp 0.6s ease-out forwards;
       }
     </style>
   </head>
   <body>
     <header>
-      <div class="container profile-container">
-        <div class="profile-image">
-          <img
-            src="samim.jpg"
-            alt="Samim Reza"
-            style="width: 100%; height: 100%; object-fit: cover"
-          />
-        </div>
-        <div class="profile-info">
-          <h1>Samim Reza</h1>
-          <p>Computer Science Student & Programming Enthusiast</p>
-          <div class="contact-links">
-            <a
-              href="mailto:samimreza2111@gmail.com"
-              target="_blank"
-              style="
-                background-color: #e74c3c;
-                color: white;
-                padding: 10px 15px;
-                border-radius: 5px;
-                text-decoration: none;
-                display: inline-block;
-              "
-              >Email Me</a
-            >
-            <a
-              href="https://www.facebook.com/samimreza101"
-              target="_blank"
-              style="
-                background-color: #3b5998;
-                color: white;
-                padding: 10px 15px;
-                border-radius: 5px;
-                text-decoration: none;
-                display: inline-block;
-              "
-              >Facebook</a
-            >
-            <a
-              href="https://github.com/samim-reza"
-              target="_blank"
-              style="
-                background-color: #333;
-                color: white;
-                padding: 10px 15px;
-                border-radius: 5px;
-                text-decoration: none;
-                display: inline-block;
-              "
-              >GitHub</a
-            >
-            <a
-              href="https://linkedin.com/in/samim-reza"
-              target="_blank"
-              style="
-                background-color: #1c4c66;
-                color: white;
-                padding: 10px 15px;
-                border-radius: 5px;
-                text-decoration: none;
-                display: inline-block;
-              "
-              >LinkedIn</a
-            >
+      <div class="container">
+        <div class="profile-container">
+          <div class="profile-image">
+            <img src="samim.jpg" alt="Samim Reza" />
+          </div>
+          <div class="profile-info">
+            <h1>Samim Reza</h1>
+            <p>Computer Science Student & Programming Enthusiast</p>
+            <div class="contact-links">
+              <a href="mailto:samimreza2111@gmail.com" class="email">Email Me</a>
+              <a href="https://www.facebook.com/samimreza101" target="_blank" class="facebook">Facebook</a>
+              <a href="https://github.com/samim-reza" target="_blank" class="github">GitHub</a>
+              <a href="https://linkedin.com/in/samim-reza" target="_blank" class="linkedin">LinkedIn</a>
+            </div>
           </div>
         </div>
       </div>
     </header>
 
     <main class="container">
-      <section>
-        <h2>About Me</h2>
-        <p>
-          I am a Computer Science Engineering student at Green University of
-          Bangladesh with a strong passion for programming and problem-solving.
-          As a three-time ICPC regionalist and Teaching Assistant of my
-          university, I enjoy tackling challenging problems and sharing my
-          knowledge with others. My technical expertise includes various
-          programming languages and technologies, with a focus on competitive
-          programming and software development and robotics.
+      <section class="section-card">
+        <h2 class="section-title">About Me</h2>
+        <p class="about-text">
+          I am a Computer Science Engineering student at Green University of Bangladesh with a strong passion for programming and problem-solving. As a three-time ICPC regionalist and Teaching Assistant of my university, I enjoy tackling challenging problems and sharing my knowledge with others. My technical expertise includes various programming languages and technologies, with a focus on competitive programming, software development, and robotics.
         </p>
       </section>
 
-      <section>
-        <h2>Experience</h2>
-        <div class="experience-item">
+      <section class="section-card">
+        <h2 class="section-title">Experience</h2>
+        
+        <div class="timeline-item">
           <div class="item-header">
             <div class="item-title">Teaching Assistant</div>
             <div class="item-date">May 2025 - Present</div>
@@ -317,7 +534,7 @@
           </ul>
         </div>
 
-        <div class="experience-item">
+        <div class="timeline-item">
           <div class="item-header">
             <div class="item-title">Academic Mentor</div>
             <div class="item-date">January 2024 - March 2025</div>
@@ -329,7 +546,7 @@
           </ul>
         </div>
 
-        <div class="experience-item">
+        <div class="timeline-item">
           <div class="item-header">
             <div class="item-title">Mentorship Program</div>
             <div class="item-date">June 2023 - Present</div>
@@ -339,63 +556,59 @@
             <li>Guide first-semester students</li>
             <li>Conduct weekly sessions</li>
             <li>Teach basic code structure</li>
-            <li>
-              Introduce students to tools like LaTeX, GitHub, and LinkedIn
-            </li>
+            <li>Introduce students to tools like LaTeX, GitHub, and LinkedIn</li>
           </ul>
         </div>
       </section>
 
-      <section>
-        <h2>Education</h2>
-        <div class="education-item">
+      <section class="section-card">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline-item">
           <div class="item-header">
-            <div class="item-title">
-              BS.c in Computer Science and Engineering
-            </div>
+            <div class="item-title">BS.c in Computer Science and Engineering</div>
             <div class="item-date">January 2022 - Present</div>
           </div>
           <div class="item-subtitle">Green University of Bangladesh</div>
-          <p><strong>Current CGPA:</strong> 3.80</p>
+          <p style="color: var(--text-secondary); margin-top: 10px;"><strong style="color: var(--text-primary);">Current CGPA:</strong> 3.80</p>
         </div>
       </section>
 
-      <section>
-        <h2>Skills</h2>
-        <div class="skills-container">
-          <span class="skill-tag">C/C++</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">PHP</span>
-          <span class="skill-tag">OOP</span>
-          <span class="skill-tag">HTML/CSS</span>
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">ROS</span>
-          <span class="skill-tag">IoT</span>
-          <span class="skill-tag">Robotics</span>
-          <span class="skill-tag">Embedded Systems</span>
-          <span class="skill-tag">Microcontroller</span>
-          <span class="skill-tag">Arduino</span>
-          <span class="skill-tag">Raspberri Pi</span>
-          <span class="skill-tag">Problem Solving</span>
-          <span class="skill-tag">Competitive Programming</span>
-          <span class="skill-tag">LaTeX</span>
-          <span class="skill-tag">Linux</span>
-          <span class="skill-tag">Git/GitHub</span>
+      <section class="section-card">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-tag">C/C++</div>
+          <div class="skill-tag">Python</div>
+          <div class="skill-tag">Java</div>
+          <div class="skill-tag">JavaScript</div>
+          <div class="skill-tag">PHP</div>
+          <div class="skill-tag">OOP</div>
+          <div class="skill-tag">HTML/CSS</div>
+          <div class="skill-tag">MySQL</div>
+          <div class="skill-tag">ROS</div>
+          <div class="skill-tag">IoT</div>
+          <div class="skill-tag">Robotics</div>
+          <div class="skill-tag">Embedded Systems</div>
+          <div class="skill-tag">Microcontroller</div>
+          <div class="skill-tag">Arduino</div>
+          <div class="skill-tag">Raspberry Pi</div>
+          <div class="skill-tag">Problem Solving</div>
+          <div class="skill-tag">Competitive Programming</div>
+          <div class="skill-tag">LaTeX</div>
+          <div class="skill-tag">Linux</div>
+          <div class="skill-tag">Git/GitHub</div>
         </div>
       </section>
 
-      <section>
-        <h2>Projects</h2>
+      <section class="section-card">
+        <h2 class="section-title">Projects</h2>
+        
         <div class="project-item">
           <div class="item-header">
             <div class="item-title">Mars Rover (Software Lead)</div>
             <div class="item-date">April 2025</div>
           </div>
-          <p>
-            Led the software development for a Mars Rover project utilizing C++,
-            Python, ROS, IoT, Robotics, and Embedded Systems.
+          <p style="color: var(--text-secondary); margin-top: 10px;">
+            Led the software development for a Mars Rover project utilizing C++, Python, ROS, IoT, Robotics, and Embedded Systems.
           </p>
         </div>
 
@@ -404,9 +617,8 @@
             <div class="item-title">Animal Introductory</div>
             <div class="item-date">June 2023</div>
           </div>
-          <p>
-            Developed an application using Java and Java Swing to introduce and
-            provide information about animals.
+          <p style="color: var(--text-secondary); margin-top: 10px;">
+            Developed an application using Java and Java Swing to introduce and provide information about animals.
           </p>
         </div>
 
@@ -415,30 +627,23 @@
             <div class="item-title">Portal Extended</div>
             <div class="item-date">June 2024</div>
           </div>
-          <p>
-            Created a web portal using JavaScript, PHP, HTML, CSS, and MySQL to
-            extend functionality of an existing platform.
+          <p style="color: var(--text-secondary); margin-top: 10px;">
+            Created a web portal using JavaScript, PHP, HTML, CSS, and MySQL to extend functionality of an existing platform.
           </p>
         </div>
       </section>
 
-      <section>
-        <h2>Achievements & Certifications</h2>
-        <div class="achievements-container">
+      <section class="section-card">
+        <h2 class="section-title">Achievements & Certifications</h2>
+        <div class="achievements-grid">
           <div class="achievement-card">
             <strong>ICPC Regionalist</strong>
-            <p>
-              Qualified for the International Collegiate Programming Contest
-              Regional round in 2022, 2023, and 2024 (3 times)
-            </p>
+            <p>Qualified for the International Collegiate Programming Contest Regional round in 2022, 2023, and 2024 (3 times)</p>
           </div>
 
           <div class="achievement-card">
             <strong>IDPC-2024 Champion</strong>
-            <p>
-              Led the champion team in the Intra Department Programming Contest
-              2024
-            </p>
+            <p>Led the champion team in the Intra Department Programming Contest 2024</p>
           </div>
 
           <div class="achievement-card">
@@ -475,5 +680,36 @@
         <p>30/1 Janata Road, Gopalganj Sadar, PO:8100, Bangladesh</p>
       </div>
     </footer>
+
+    <script>
+      // Smooth scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.section-card').forEach(card => {
+        observer.observe(card);
+      });
+
+      // Add some interactive hover effects
+      document.querySelectorAll('.skill-tag').forEach(tag => {
+        tag.addEventListener('mouseenter', () => {
+          tag.style.transform = 'translateY(-3px) scale(1.05)';
+        });
+        
+        tag.addEventListener('mouseleave', () => {
+          tag.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+    </script>
   </body>
 </html>
