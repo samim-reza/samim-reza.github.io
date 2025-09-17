@@ -321,6 +321,63 @@ section {
 }
 
 
+/* Add these styles to fix scrolling issues */
+
+/* General scrolling behavior for book pages */
+.book-page {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Make sure page content is properly contained */
+.page-content {
+  height: 100%;
+  position: relative;
+}
+
+/* Mobile specific fixes */
+@media screen and (max-width: 768px) {
+  /* Fix vertical scrolling for book pages on mobile */
+  .book-page {
+    overflow-y: auto !important; /* Force vertical scrollbar when needed */
+    max-height: 70vh; /* Limit height to ensure scrollability */
+    height: auto !important; /* Override any fixed heights */
+    padding-bottom: 30px; /* Add padding at bottom to prevent content being cut off */
+  }
+  
+  /* Fix for turn.js pages to allow scrolling */
+  .turn-page {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Ensure flipbook container doesn't restrict scrolling */
+  .flipbook-container {
+    overflow: visible;
+    height: auto !important;
+  }
+  
+  /* Ensure the flipbook itself allows for proper page display */
+  #flipbook {
+    height: auto !important;
+    min-height: 400px;
+  }
+  
+  /* Fix for poem content specifically */
+  [data-page^="poem"] .page-content {
+    overflow-y: auto !important;
+    max-height: none !important;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .book-page {
+    max-height: 60vh; /* Even smaller height for very small screens */
+  }
+}
+
+
 /* Introduction page */
 
 .intro-page {
@@ -799,37 +856,59 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .nav-links {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .page-content {
-        padding: 30px 25px;
-    }
-    .writing-title {
-        font-size: 1.5rem;
-    }
-    .index-categories {
-        flex-direction: column;
-    }
-    .cover-content h1 {
-        font-size: 2rem;
-    }
-    .author-name {
-        font-size: 1.2rem;
-    }
-    .flipbook-container {
-        height: 500px;
-    }
-    #flipbook {
-        width: 100%;
-        height: 500px;
-    }
+  .book-wrapper {
+    flex-direction: column;
+    overflow-y: auto; /* Enable vertical scrolling when needed */
+    max-height: none; /* Remove any height restrictions */
+  }
+  
+  /* Enable horizontal scrolling for book content that might overflow */
+  .flipbook-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+  
+  /* Make sure the book content doesn't get cut off */
+  #flipbook {
+    min-width: 300px; /* Minimum width to ensure content is readable */
+    margin: 0 auto;
+  }
+  
+  /* Ensure the book pages can be scrolled horizontally if needed */
+  .book-page {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 70vh; /* Limit height on mobile to ensure scrollability */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Ensure index doesn't cause horizontal overflow */
+  .book-index {
+    width: 100%;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+  }
+  
+  /* Ensure long content in index items can scroll if needed */
+  .index-list {
+    max-height: 300px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Ensure content containers don't restrict scrolling */
+  .container {
+    overflow: visible;
+    padding: 10px;
+  }
+  
+  /* Make sure navigation controls are always visible */
+  .page-nav-controls {
+    position: relative;
+    bottom: auto;
+    margin: 15px auto;
+  }
 }
 
 @media (max-width: 480px) {

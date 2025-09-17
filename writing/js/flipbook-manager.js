@@ -107,12 +107,13 @@ class FlipbookManager {
         }
 
         $("#flipbook").turn({
-            width: width,
-            height: height,
+            width: window.innerWidth < 768 ? window.innerWidth * 0.9 : 800,
+            height: window.innerWidth < 768 ? 500 : 600,
             autoCenter: true,
+            display: this.getDisplayMode(),
+            acceleration: true,
             elevation: 50,
             gradients: true,
-            acceleration: true,
             when: {
                 turning: (e, page, view) => this.onTurning(e, page, view),
                 turned: (e, page, view) => this.onTurned(e, page, view)
@@ -126,9 +127,12 @@ class FlipbookManager {
         // Re-initialize on window resize for responsiveness
         $(window).off('resize.flipbook').on('resize.flipbook', () => {
             $("#flipbook").turn("size", 
-                window.innerWidth < 600 ? window.innerWidth - 10 : (window.innerWidth < 900 ? 700 : (window.innerWidth < 1200 ? 700 : 922)),
-                window.innerWidth < 600 ? 260 : (window.innerWidth < 900 ? 400 : (window.innerWidth < 1200 ? 480 : 600))
+                window.innerWidth < 768 ? window.innerWidth * 0.9 : 800,
+                window.innerWidth < 768 ? 500 : 600
             );
+            
+            $("#flipbook").turn("display", this.getDisplayMode());
+            $("#flipbook").turn("resize");
         });
     }
 
@@ -274,6 +278,60 @@ class FlipbookManager {
         });
     }
     
+    // Add this function to determine display mode based on screen size
+    getDisplayMode() {
+      return window.innerWidth < 768 ? 'single' : 'double';
+    }
+}
+
+// Ensure the flipbook size is appropriate for the device
+function getFlipbookDimensions() {
+  if (window.innerWidth < 480) {
+    // Very small screens
+    return {
+      width: Math.min(window.innerWidth * 0.95, 320),
+      height: 450
+    };
+  } else if (window.innerWidth < 768) {
+    // Regular mobile screens
+    return {
+      width: Math.min(window.innerWidth * 0.9, 500),
+      height: 500
+    };
+  } else {
+    // Larger screens
+    return {
+      width: 800,
+      height: 600
+    };
+  }
+}
+
+// Initialize or update the flipbook with appropriate dimensions
+function initOrUpdateFlipbook() {
+  const dimensions = getFlipbookDimensions();
+  
+  if ($("#flipbook").turn("is")) {
+    $("#flipbook").turn("size", dimensions.width, dimensions.height);
+    $("#flipbook").turn("display", getDisplayMode());
+    $("#flipbook").turn("resize");
+  } else {
+    $("#flipbook").turn({
+      width: dimensions.width,
+      height: dimensions.height,
+      autoCenter: true,
+      display: getDisplayMode(),
+      acceleration: true,
+      elevation: 50,
+      gradients: true,
+      when: {
+        turning: function(event, page, view) {
+          // Update page indicator
+          updatePageIndicator(page, $("#flipbook").turn("pages"));
+        }
+      }
+    });
+  }
 }
 
 // Initialize flipbook when document is ready
@@ -327,5 +385,72 @@ $(document).ready(() => {
     $("#prev-btn").click(function() {
         const page = $("#flipbook").turn('page');
         renderFooter(page);
+    });
+    
+    // Initialize with correct dimensions
+    initOrUpdateFlipbook();
+    
+    // Handle window resize events more efficiently
+    let resizeTimer;
+    $(window).on('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        initOrUpdateFlipbook();
+      }, 250);
+    });
+    
+    // Ensure content is scrollable on touch devices
+    if ('ontouchstart' in window) {
+      $(document).on('touchmove', function(e) {
+        const $target = $(e.target);
+        // Allow scrolling within book pages and index
+        if ($target.closest('.book-page, .index-list').length) {
+          e.stopPropagation();
+        }
+      });
+    }
+
+    // Function to ensure proper scrolling behavior on mobile
+    function setupMobileScrolling() {
+      if (window.innerWidth <= 768) {
+        // Fix for turn.js pages - allow scrolling within pages
+        $('.turn-page').css({
+          'overflow-y': 'auto',
+          '-webkit-overflow-scrolling': 'touch'
+        });
+        
+        // Ensure each book page can scroll
+        $('.book-page').css({
+          'overflow-y': 'auto',
+          '-webkit-overflow-scrolling': 'touch'
+        });
+        
+        // Special handling for poem pages which might have longer content
+        $('[data-page^="poem"]').css({
+          'overflow-y': 'auto',
+          'max-height': 'none'
+        });
+      }
+    }
+
+    // Initial setup for mobile scrolling
+    setupMobileScrolling();
+    
+    // Also run when pages are loaded or turned
+    $('#flipbook').on('turned', function(event, page, view) {
+      setupMobileScrolling();
+    });
+    
+    // Run again on window resize
+    $(window).on('resize', function() {
+      setupMobileScrolling();
+    });
+    
+    // Handle touch events better
+    $(document).on('touchstart touchmove', function(e) {
+      // Allow default scrolling behavior within scrollable elements
+      if ($(e.target).closest('.book-page, .turn-page').length) {
+        e.stopPropagation();
+      }
     });
 });
