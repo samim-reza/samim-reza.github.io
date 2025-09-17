@@ -35,7 +35,7 @@ body {
     background-color: var(--book-bg);
     color: var(--book-text);
     line-height: 1.8;
-    overflow-x: hidden;
+    overflow-x: auto;
 }
 
 .container {
@@ -680,7 +680,7 @@ footer {
     color: var(--book-text) !important;
     display: flex !important;
     flex-direction: column !important;
-    overflow: hidden !important;
+    overflow: auto !important;
     border: 1px solid var(--book-border) !important;
     box-shadow: var(--book-shadow) !important;
 }
@@ -705,6 +705,7 @@ footer {
 .writing-item.scene-item .writing-content {
     flex: 1 1 auto !important;
     overflow-y: auto !important;
+    overflow-x: auto !important;
     line-height: 1.8 !important;
     font-size: 1rem !important;
     text-align: left !important;
