@@ -334,53 +334,6 @@ function initOrUpdateFlipbook() {
   }
 }
 
-// Add this function to force scrolling to work on mobile
-
-// Function to apply mobile scrolling fixes
-function forceMobileScrolling() {
-  if (window.innerWidth <= 768) {
-    // Direct approach to make turn.js pages scrollable
-    setTimeout(function() {
-      // Apply to all turn pages
-      $('.turn-page').each(function() {
-        // Add mobile-scroll class to enable scrolling
-        $(this).addClass('mobile-scroll');
-        
-        // Get the content element inside
-        const $content = $(this).find('.page-content');
-        if ($content.length) {
-          $content.addClass('mobile-scroll');
-          
-          // Check if content height exceeds container
-          if ($content[0].scrollHeight > $content.height()) {
-            $content.addClass('overflow-content');
-          }
-        }
-        
-        // Special handling for poem pages
-        if ($(this).find('[data-page^="poem"]').length) {
-          $(this).addClass('overflow-content');
-          $(this).find('.page-content').addClass('overflow-content');
-        }
-      });
-      
-      // Override any turn.js styles that might be interfering
-      $('.turn-page-wrapper').css({
-        'overflow': 'visible',
-        'height': 'auto',
-        'position': 'relative'
-      });
-      
-      // Make sure the flipbook container isn't restricting height
-      $('#flipbook').css({
-        'height': 'auto',
-        'min-height': '400px'
-      });
-      
-    }, 500); // Delay to ensure content is loaded
-  }
-}
-
 // Initialize flipbook when document is ready
 $(document).ready(() => {
     new FlipbookManager();
@@ -500,38 +453,4 @@ $(document).ready(() => {
         e.stopPropagation();
       }
     });
-
-    // Apply mobile scrolling fixes after initialization
-    forceMobileScrolling();
-    
-    // Apply fixes whenever a page is turned
-    $('#flipbook').on('turning turned', function() {
-      forceMobileScrolling();
-    });
-    
-    // Reapply when window is resized
-    $(window).on('resize', function() {
-      forceMobileScrolling();
-    });
-    
-    // Add a direct fix for poem pages specifically
-    $('body').on('click', '[data-page^="poem"]', function() {
-      setTimeout(forceMobileScrolling, 100);
-    });
-    
-    // Ensure scrolling works when directly loading a page
-    if (window.location.hash && window.location.hash.includes('page')) {
-      setTimeout(forceMobileScrolling, 800);
-    }
 });
-
-// Also add this helper function to check content that should scroll
-function checkForScrollableContent() {
-  if (window.innerWidth <= 768) {
-    $('.page-content').each(function() {
-      if (this.scrollHeight > $(this).height()) {
-        $(this).addClass('overflow-content');
-      }
-    });
-  }
-}
