@@ -334,6 +334,37 @@ function initOrUpdateFlipbook() {
   }
 }
 
+// Add this function to fix mobile scrolling issues
+
+function enableMobileScrolling() {
+  if (window.innerWidth <= 768) {
+    // Apply these fixes after turn.js initializes and when pages are turned
+    setTimeout(function() {
+      // Make the turn.js pages scrollable
+      $('.turn-page').css({
+        'overflow-y': 'auto',
+        'height': 'auto',
+        'min-height': '100%'
+      });
+      
+      // Enable touch scrolling
+      $('.turn-page').attr('data-scroll', 'true');
+      
+      // Fix all page content
+      $('.page-content').css({
+        'overflow-y': 'auto',
+        'max-height': 'none'
+      });
+      
+      // Specific fix for poem pages which tend to be longer
+      $('[data-page^="poem"]').parent().css({
+        'overflow-y': 'auto',
+        'max-height': 'none'
+      });
+    }, 100);
+  }
+}
+
 // Initialize flipbook when document is ready
 $(document).ready(() => {
     new FlipbookManager();
@@ -450,6 +481,26 @@ $(document).ready(() => {
     $(document).on('touchstart touchmove', function(e) {
       // Allow default scrolling behavior within scrollable elements
       if ($(e.target).closest('.book-page, .turn-page').length) {
+        e.stopPropagation();
+      }
+    });
+
+    // Call when flipbook is initialized
+    $('#flipbook').on('turned', function(event, page, view) {
+      enableMobileScrolling();
+    });
+    
+    // Also run on page load
+    enableMobileScrolling();
+    
+    // Reapply when window is resized
+    $(window).on('resize', function() {
+      enableMobileScrolling();
+    });
+    
+    // Override turn.js touch handling to allow scrolling within pages
+    $(document).on('touchmove', function(e) {
+      if ($(e.target).closest('.turn-page, .page-content').length) {
         e.stopPropagation();
       }
     });

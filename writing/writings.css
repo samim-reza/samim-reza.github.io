@@ -808,6 +808,7 @@ footer {
 
 .book-page,
 .writing-item.scene-item {
+    counter-increment: page-number;
     width: 461px !important;
     height: 600px !important;
     background-color: var(--book-page) !important;
@@ -1032,4 +1033,40 @@ body {
 .book-page,
 .writing-item.scene-item {
     counter-increment: page-number;
+}
+
+/* Mobile-specific scrolling fixes */
+
+@media screen and (max-width: 768px) {
+  /* Fix vertical scrolling for turn.js pages */
+  .turn-page-wrapper {
+    overflow: visible !important;
+  }
+  
+  .turn-page {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Make individual page content scrollable */
+  .page-content {
+    max-height: none !important;
+    overflow-y: auto !important;
+  }
+  
+  /* Ensure book pages can scroll on mobile */
+  .book-page {
+    overflow-y: auto !important;
+    max-height: none !important;
+  }
+  
+  /* Fix the flipbook container to allow scrolling */
+  #flipbook {
+    overflow: visible !important;
+  }
+  
+  .flipbook-container {
+    overflow: visible;
+    height: auto !important;
+  }
 }
