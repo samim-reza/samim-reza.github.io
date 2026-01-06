@@ -12,8 +12,12 @@ node_modules/
 # Testing
 /coverage
 
-# Production
+# Production build folder (not the deployed files)
 /build
+
+# Source files backup
+old_static_site/
+old_static_files/
 
 # Misc
 .DS_Store
@@ -42,6 +46,3 @@ yarn-error.log*
 # Logs
 logs
 *.log
-
-package-lock.json
-package.json
