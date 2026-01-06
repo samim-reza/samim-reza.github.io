@@ -116,6 +116,10 @@ section {
   padding: 10px 10px;
   border-radius: 8px;
   transition: var(--transition);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .sidebar-link:hover {
@@ -152,6 +156,15 @@ section {
   border: 1px solid var(--border-color);
   background: #ffffff;
   transition: var(--transition);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  position: relative;
+  pointer-events: auto;
+}
+
+.sidebar-social a i {
+  pointer-events: none;
+  user-select: none;
 }
 
 .sidebar-social a:hover {
@@ -362,7 +375,24 @@ section {
   }
 
   .sidebar-footer {
-    display: none;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .sidebar-social {
+    margin-bottom: 0;
+    gap: 12px;
+  }
+
+  .sidebar-social a {
+    width: 32px;
+    height: 32px;
+  }
+
+  .sidebar-copy {
+    font-size: 0.7rem;
   }
 
   .main {
@@ -598,7 +628,9 @@ section {
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px 28px;
   border-radius: 50px;
   text-decoration: none;
@@ -608,6 +640,27 @@ section {
   cursor: pointer;
   border: none;
   font-family: "Poppins", sans-serif;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: auto;
+  position: relative;
+}
+
+.btn * {
+  pointer-events: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: white;
 }
 
 .btn-primary {
@@ -1307,6 +1360,9 @@ header::before {
   gap: 8px;
   transition: var(--transition);
   border: 2px solid transparent;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .project-btn.primary {
@@ -1585,10 +1641,20 @@ footer {
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+#chat-toggle:active {
+  transform: scale(0.95);
 }
 
 #chat-toggle i { 
-  font-size: 40px; 
+  font-size: 40px;
+  pointer-events: none;
+  user-select: none;
 }
 
 #chat-panel {
@@ -1631,7 +1697,16 @@ footer {
   border:none; 
   color:white; 
   font-size:20px; 
-  cursor:pointer; 
+  cursor:pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  min-width: 28px;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #chat-iframe { 

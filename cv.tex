@@ -1,0 +1,250 @@
+%-------------------------
+% Resume in LaTeX
+% Author : Jake Gutierrez
+% Modified & Beautified by Md Ataullha Saim
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{extarticle}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{phonenumbers}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}
+{\vspace{-6pt}\scshape\raggedright\large}
+{}{0em}{}[\titlerule \vspace{-6pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+\item
+\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{#1} & #2 \\
+\textit{\small#3} & \textit{\small#4}
+\end{tabular*}
+}
+\newcommand{\resumeProjectHeading}[2]{
+\item
+\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+\small\textbf{#1} & \small #2
+\end{tabular*}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[noitemsep,topsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+\textbf{\Huge \scshape Samim Reza} \\
+\vspace{4pt}
+Dhaka, Bangladesh \\
+\vspace{3pt}
++8801747773315 
+$\vert$
+\href{mailto:samimreza2111@gmail.com}{samimreza2111@gmail.com} 
+$\vert$
+\href{https://samim-reza.github.io}{samim-reza.github.io} \\
+\vspace{3pt}
+\href{https://github.com/samim-reza}{GitHub} 
+$\vert$
+\href{https://linkedin.com/in/samim-reza}{LinkedIn}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Green University of Bangladesh}{Jan 2022 -- Present}
+{B.Sc. in Computer Science and Engineering}{CGPA: 3.80/4.00}
+\resumeSubheading
+{Government Bangabandhu College}{2017 -- 2019}
+{Higher Secondary Certificate}{GPA: 4.75/5.00}
+\resumeSubheading
+{S.M. Model Govt. High School}{2012 -- 2017}
+{Secondary School Certificate}{GPA: 5.00/5.00}
+\resumeSubHeadingListEnd
+
+%-----------WORK EXPERIENCE-----------
+\section{Work Experience}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{Robotics Engineer Intern — RoboTech Valley}{Jul 2025 -- Sept 2025}
+\resumeItemListStart
+\resumeItem{Designing robotics modules using embedded systems and ROS for autonomous navigation.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Teaching Assistant — Green University of Bangladesh}{May 2025 -- Aug 2025}
+\resumeItemListStart
+\resumeItem{Conducting demo classes on C Programming and Data Structures.}
+\resumeItem{Evaluating exam scripts and preparing grade sheets.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Programming Trainer — Green University of Bangladesh}{Jan 2025 -- Dec 2025}
+\resumeItemListStart
+\resumeItem{Training students for competitive programming; conducted weekly sessions.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Mentor — University Mentorship Program}{Jun 2023 -- Aug 2025}
+\resumeItemListStart
+\resumeItem{Mentored first-year students in programming fundamentals and professional tools.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------RESEARCH EXPERIENCE-----------
+\section{Research Experience (Ongoing)}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{Denoising Diffusion Probabilistic Models}{}
+\resumeItemListStart
+\resumeItem{Integrating edge detection for enhanced image generation.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Federated Learning}{}
+\resumeItemListStart
+\resumeItem{Adaptive client selection algorithms for optimal convergence.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Human-in-the-Loop ML}{}
+\resumeItemListStart
+\resumeItem{Survey on HITL approaches in modern ML systems.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------
+% \section{Publications}
+% % Add your publications here when available
+% \textit{No publications yet.}
+
+%-----------FEATURED PROJECTS-----------
+\section{Featured Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{KobitaLM — Bengali Poetry Generator}{\href{https://huggingface.co/samim-reza/KobitaLM}{Model} $\vert$ \href{https://github.com/samim-reza/KobitaLM}{GitHub}}
+\resumeItemListStart
+\resumeItem{Fine-tuned Gemma 2 9B model with LoRA \& RAG for generating Bengali poetry in styles of classical poets like Rabindranath Tagore, Jibanananda Das, and more.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Personal AI Assistant — LLM, RAG, LangChain}{\href{https://samim-chatbot-app.azurewebsites.net/}{Live} $\vert$ \href{https://github.com/samim-reza/MyChatBot}{GitHub}}
+\resumeItemListStart
+\resumeItem{LLM-powered chatbot with RAG implementation for personalized assistance.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{WeCare Medical Service App — FastAPI, Ollama/Qwen3-VL, PWA, MySQL}{\href{https://github.com/samim-reza/FutureBuilders2025_GreenU_Tensors}{GitHub}}
+\resumeItemListStart
+\resumeItem{Offline-first PWA for rural healthcare with AI triage capabilities.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Cirrhosis Outcome Prediction — XGBoost, LightGBM, CatBoost}{BAIC 2025}
+\resumeItemListStart
+\resumeItem{Ensemble ML classifier with 55 engineered features, achieving 14.5\% accuracy gain.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Mars Rover — ROS, Embedded Systems}{\href{https://github.com/samim-reza/Rover-robot}{GitHub}}
+\resumeItemListStart
+\resumeItem{ROS-based autonomous navigation system for Mars rover simulation.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Animal Introductory System — Java, MySQL}{\href{https://github.com/samim-reza/Animal_Introductory}{GitHub}}
+\resumeItemListStart
+\resumeItem{Java GUI application with MySQL database for animal information management.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{Portal Extended — JavaScript, PHP, MySQL}{\href{https://github.com/samim-reza/portal_extended}{GitHub}}
+\resumeItemListStart
+\resumeItem{Full-stack web portal with comprehensive functionality.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\small{
+\textbf{Languages}: C, C++, Python, Java, JavaScript, PHP \\
+\textbf{AI/ML}: PyTorch, TensorFlow, Scikit-learn, LangChain, VectorDB, RAG, LLM, Roboflow \\
+\textbf{Tools \& Platforms}: ROS, Git, Docker, LaTeX, Linux, MySQL, Arduino, Raspberry Pi, Jetson, ESP32, Azure, PWA \\
+\textbf{Data Science}: Kaggle Competitions, Machine Learning, Data Analysis
+}
+
+%-----------COMPETITIVE PROGRAMMING-----------
+\section{Competitive Programming}
+\resumeItemListStart
+\resumeItem{Champion: Intra Dept Programming Contest 2024.}
+\resumeItem{3x ICPC Regionalist: 2022, 2023, 2024.}
+\resumeItem{Around 1000 problems solved across online judges.}
+\resumeItem{Kaggle Competitor: Active in ML competitions.}
+\resumeItem{Problem Setter: Junior Programming Contests.}
+\resumeItem{Participated: NCPC 2023, IUPC 2023/2024.}
+\resumeItemListEnd
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+\resumeItemListStart
+\resumeItem{Vice Chancellor's and DEAN's Award for Academic Excellence.}
+\resumeItem{Champion, Inter Dept Programming Contest 2024.}
+\resumeItem{Secured 8th position in BUBT Artificial Intelligence Conquest (Kaggle).}
+\resumeItem{National IT Quiz Competition Medalist.}
+\resumeItemListEnd
+
+%-----------REFERENCES-----------
+\section{References}
+\textbf{Prof. Dr. Md. Saiful Azad} \\
+Dean, Faculty of Science \& Engineering \\
+Green University of Bangladesh \\
+Email: dean@fse.green.edu.bd \\
+Mobile: +880 1747-230418
+
+\vspace{6pt}
+\textbf{Dr. Faiz Al Faisal} \\
+Associate Professor \& Director of IT \\
+Green University of Bangladesh \\
+Email: faisal@cse.green.edu.bd \\
+Mobile: +880 1926-662396
+
+\end{document}
