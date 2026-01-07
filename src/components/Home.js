@@ -41,7 +41,7 @@ function Home({ onNavigate }) {
           </div>
         </div>
         <div className="home-image" aria-hidden="true">
-          <img src="/samim.png" alt="" />
+          {/* <img src="/samim.png" alt="" /> */}
         </div>
       </div>
     </section>
