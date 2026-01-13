@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Sidebar from './components/Sidebar';
+import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
 import Research from './components/Research';
@@ -16,18 +16,17 @@ function App() {
   const [activePanel, setActivePanel] = useState('home');
 
   useEffect(() => {
-    // Only restore state if it's within the same session (using sessionStorage instead)
     const stored = sessionStorage.getItem('active_panel');
     if (stored) {
       setActivePanel(stored);
     }
-    // Clear old localStorage if it exists
     localStorage.removeItem('active_panel');
   }, []);
 
   const handlePanelChange = (panelId) => {
     setActivePanel(panelId);
     sessionStorage.setItem('active_panel', panelId);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const renderPanel = () => {
@@ -46,14 +45,13 @@ function App() {
   };
 
   return (
-    <div className="app-layout">
-      <Sidebar 
-        activePanel={activePanel} 
-        onNavigate={handlePanelChange} 
-      />
-      <main className="main" aria-label="Main content">
+    <div className="app">
+      <Header onNavigate={handlePanelChange} activePanel={activePanel} />
+      
+      <main className="main-content">
         {renderPanel()}
       </main>
+      
       <ChatWidget />
     </div>
   );

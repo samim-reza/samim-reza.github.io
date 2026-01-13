@@ -2,13 +2,10 @@ import React from 'react';
 
 function Projects() {
   return (
-    <section className="panel is-active" data-panel="projects" aria-label="Projects">
-      <div className="panel-inner">
-        <div className="container">
-          <div className="section-title">
-            <h2>Featured Projects</h2>
-            <div className="divider"></div>
-          </div>
+    <section className="panel-section">
+      <div className="panel-container">
+        <div className="section-label">Projects</div>
+        <h2 className="section-heading">Featured Projects</h2>
 
           <div className="projects-grid">
             <div className="project-card featured">
@@ -228,7 +225,6 @@ function Projects() {
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>

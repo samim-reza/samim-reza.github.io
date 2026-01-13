@@ -1,14 +1,7 @@
-import React from 'react';
-
 function Achievements() {
   return (
-    <section className="panel is-active" data-panel="achievements" aria-label="Achievements">
-      <div className="panel-inner">
-        <div className="container">
-          <div className="section-title">
-            <h2>Achievements & Recognition</h2>
-            <div className="divider"></div>
-          </div>
+    <section className="panel-section">
+      <div className="panel-container">
 
           <div className="achievements-grid">
             <div className="achievement-card gold">
@@ -98,7 +91,6 @@ function Achievements() {
               </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
   );

@@ -2,13 +2,10 @@ import React from 'react';
 
 function Education() {
   return (
-    <section className="panel is-active" aria-label="Education">
-      <div className="panel-inner">
-        <div className="container">
-          <div className="section-title">
-            <h2>Education</h2>
-            <div className="divider"></div>
-          </div>
+    <section className="panel-section">
+      <div className="panel-container">
+        <div className="section-label">Education</div>
+        <h2 className="section-heading">Education</h2>
 
           <div className="timeline">
             <div className="timeline-item">
@@ -57,7 +54,6 @@ function Education() {
               </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
   );

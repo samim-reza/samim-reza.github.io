@@ -2,13 +2,10 @@ import React from 'react';
 
 function Skills() {
   return (
-    <section className="panel is-active" data-panel="skills" aria-label="Skills">
-      <div className="panel-inner">
-        <div className="container">
-          <div className="section-title">
-            <h2>Technical Skills</h2>
-            <div className="divider"></div>
-          </div>
+    <section className="panel-section">
+      <div className="panel-container">
+        <div className="section-label">Skills</div>
+        <h2 className="section-heading">Technical Skills</h2>
 
           <div className="skills-wrapper">
             <div className="skill-group">
@@ -109,7 +106,6 @@ function Skills() {
                 <span className="skill-badge">OOP</span>
                 <span className="skill-badge">System Design</span>
               </div>
-            </div>
           </div>
         </div>
       </div>

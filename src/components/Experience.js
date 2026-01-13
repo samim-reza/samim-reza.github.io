@@ -53,13 +53,10 @@ function Experience() {
   ];
 
   return (
-    <section className="panel is-active" aria-label="Experience">
-      <div className="panel-inner">
-        <div className="container">
-          <div className="section-title">
-            <h2>Work Experience</h2>
-            <div className="divider"></div>
-          </div>
+    <section className="panel-section">
+      <div className="panel-container">
+        <div className="section-label">Experience</div>
+        <h2 className="section-heading">Work Experience</h2>
 
           <div className="timeline">
             {experiences.map((exp, index) => (
@@ -79,7 +76,6 @@ function Experience() {
                 </div>
               </div>
             ))}
-          </div>
         </div>
       </div>
     </section>

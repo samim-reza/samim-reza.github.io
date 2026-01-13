@@ -2,13 +2,10 @@ import React from 'react';
 
 function Research() {
   return (
-    <section className="panel is-active" aria-label="Research">
-      <div className="panel-inner">
-        <div className="container">
-          <div className="section-title">
-            <h2>Research on Going</h2>
-            <div className="divider"></div>
-          </div>
+    <section className="panel-section">
+      <div className="panel-container">
+        <div className="section-label">Research</div>
+        <h2 className="section-heading">Research on Going</h2>
 
           <div className="timeline">
             <div className="timeline-item">
@@ -65,7 +62,6 @@ function Research() {
               </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
   );
