@@ -37,8 +37,7 @@ function Achievements() {
                 <span className="achievement-badge">Hackathon</span>
                 <h4>BAIC 2025 - 8th Position</h4>
                 <p>
-                  Secured 8th position out of 50+ teams at BAIC 2025 - BUBT Artificial Intelligence Conquest,
-                  a 24-hour inter-university ML hackathon with 14.5% improvement over baseline.
+                  Secured 8th position out of 50+ teams at BUBT Artificial Intelligence Conquest in Kaggle.
                 </p>
               </div>
             </div>
@@ -51,19 +50,8 @@ function Achievements() {
                 <span className="achievement-badge">Academic Excellence</span>
                 <h4>Vice Chancellor's & DEAN's Award</h4>
                 <p>
-                  Received prestigious awards for outstanding academic performance with a CGPA of 3.80/4.00
+                  Received prestigious awards for outstanding academic performance.
                 </p>
-              </div>
-            </div>
-
-            <div className="achievement-card silver">
-              <div className="achievement-icon">
-                <i className="fas fa-medal"></i>
-              </div>
-              <div className="achievement-content">
-                <span className="achievement-badge">National Competition</span>
-                <h4>National School Programming Contest</h4>
-                <p>First Runner-up in National School Programming Contest</p>
               </div>
             </div>
 
@@ -86,7 +74,7 @@ function Achievements() {
                 <span className="achievement-badge">Problem Setter</span>
                 <h4>Contest Problem Setter</h4>
                 <p>
-                  Set problems for Junior Intra Department Programming Contest and Math Olympiad
+                  Set problems for Junior Programming Contests
                 </p>
               </div>
             </div>

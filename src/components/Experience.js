@@ -4,11 +4,10 @@ function Experience() {
   const experiences = [
     {
       title: "Robotics Engineer Intern",
-      date: "July 2025 - Sept 2025",
+      date: "Jul 2025 - Sept 2025",
       subtitle: "RoboTech Valley",
       points: [
-        "Designing and developing robotics modules using embedded systems and ROS",
-        "Assisting in sensor integration, motor control, and autonomous navigation logic"
+        "Designing robotics modules using embedded systems and ROS for autonomous navigation"
       ]
     },
     {
@@ -16,29 +15,8 @@ function Experience() {
       date: "May 2025 - Aug 2025",
       subtitle: "Green University of Bangladesh",
       points: [
-        "Conduct demo classes on C Programming and Data Structures",
-        "Assist with grade sheet preparation and evaluate exam scripts"
-      ]
-    },
-    {
-      title: "Robotics Software Engineer – GUB Mars Rover Team",
-      date: "Jun 2024 – Jul 2025",
-      subtitle: "Part-time",
-      points: [
-        "Developed and integrated software modules for Mars Rover's robotic arm and autonomous navigation.",
-        "Worked on ROS (Robot Operating System) for sensor fusion and control architecture.",
-        "Designed and implemented communication protocols between onboard systems.",
-        "Integrated and tested various sensors (IMU, GPS, encoders) for real-time decision-making.",
-        "Collaborated with cross-functional teams for system testing and field validation."
-      ]
-    },
-    {
-      title: "Mentor",
-      date: "June 2023 - Aug 2025",
-      subtitle: "Mentorship Program, Green University of Bangladesh",
-      points: [
-        "Guide first-semester students through regular weekly sessions",
-        "Teach coding basics and tools like LaTeX, GitHub, and LinkedIn"
+        "Conducting demo classes on C Programming and Data Structures",
+        "Evaluate exam scripts and prepare grade sheets"
       ]
     },
     {
@@ -46,8 +24,15 @@ function Experience() {
       date: "Jan 2025 - Dec 2025",
       subtitle: "Green University of Bangladesh",
       points: [
-        "Conduct weekly programming sessions for beginner to advanced level students",
-        "Help students prepare for contests through training and mock competitions"
+        "Training students for competitive programming; conducted weekly sessions"
+      ]
+    },
+    {
+      title: "Mentor",
+      date: "Jun 2023 - Aug 2025",
+      subtitle: "University Mentorship Program",
+      points: [
+        "Mentored first-year students in programming fundamentals and professional tools"
       ]
     }
   ];
@@ -58,22 +43,23 @@ function Experience() {
         <div className="section-label">Experience</div>
         <h2 className="section-heading">Work Experience</h2>
 
-          <div className="timeline">
+          <div className="services-grid">
             {experiences.map((exp, index) => (
-              <div key={index} className="timeline-item">
-                <div className="timeline-dot"></div>
-                <div className="timeline-content">
-                  <div className="timeline-header">
-                    <h3 className="timeline-title">{exp.title}</h3>
-                    <div className="timeline-date">{exp.date}</div>
-                  </div>
-                  <div className="timeline-subtitle">{exp.subtitle}</div>
-                  <ul className="timeline-list">
-                    {exp.points.map((point, idx) => (
-                      <li key={idx}>{point}</li>
-                    ))}
-                  </ul>
+              <div key={index} className="service-card">
+                <div className="stat-icon" style={{marginBottom: '12px', background: 'rgba(78, 70, 229, 0.08)'}}>
+                  <i className="fas fa-briefcase"></i>
                 </div>
+                <div className="timeline-header" style={{marginBottom: '4px'}}>
+                  <h4 style={{fontSize: '1.04rem', margin: '0'}}>{exp.title}</h4>
+                </div>
+                <div className="timeline-subtitle" style={{color: 'var(--brand)', fontSize: '0.85rem', marginBottom: '8px', fontWeight: '600'}}>
+                  {exp.subtitle} | {exp.date}
+                </div>
+                <ul className="timeline-list" style={{paddingLeft: '16px', color: 'var(--muted)', fontSize: '0.92rem', margin: '0'}}>
+                  {exp.points.map((point, idx) => (
+                    <li key={idx} style={{marginBottom: '4px'}}>{point}</li>
+                  ))}
+                </ul>
               </div>
             ))}
         </div>

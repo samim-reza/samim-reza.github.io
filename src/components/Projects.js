@@ -198,28 +198,29 @@ function Projects() {
 
             <div className="project-card">
               <div className="project-icon">
-                <i className="fas fa-globe"></i>
+                <i className="fas fa-wallet"></i>
               </div>
               <div className="project-content">
                 <div className="project-header">
                   <div>
                     <span className="project-category">Web Development</span>
-                    <h3 className="project-title">Portal Extended</h3>
+                    <h3 className="project-title">Union Ledger</h3>
                   </div>
-                  <span className="project-date"><i className="far fa-calendar"></i> 2024</span>
+                  <span className="project-date"><i className="far fa-calendar"></i> 2025</span>
                 </div>
                 <p className="project-description">
-                  Enhanced portal system for managing user data and content using full-stack technologies.
-                  Built with JavaScript, PHP, HTML/CSS, and MySQL for robust data management.
+                  Collaborative financial tracker with consensus-based voting.
                 </p>
                 <div className="project-tech">
-                  <span className="tech-tag">JavaScript</span>
-                  <span className="tech-tag">PHP</span>
-                  <span className="tech-tag">HTML/CSS</span>
-                  <span className="tech-tag">MySQL</span>
+                  <span className="tech-tag">Django</span>
+                  <span className="tech-tag">PostgreSQL</span>
+                  <span className="tech-tag">Render</span>
                 </div>
                 <div className="project-links">
-                  <a href="https://github.com/samim-reza/portal_extended" target="_blank" rel="noopener noreferrer" className="project-btn secondary">
+                  <a href="https://samim-reza.github.io/union" target="_blank" rel="noopener noreferrer" className="project-btn primary">
+                    <i className="fas fa-external-link-alt"></i> Live
+                  </a>
+                  <a href="https://github.com/samim-reza/union" target="_blank" rel="noopener noreferrer" className="project-btn secondary">
                     <i className="fab fa-github"></i> GitHub
                   </a>
                 </div>

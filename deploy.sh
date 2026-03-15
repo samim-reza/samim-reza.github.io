@@ -4,8 +4,8 @@
 echo "🚀 Building React app..."
 npm run build
 
-echo "📦 Copying build files to root..."
-cp -r build/* .
+# echo "📦 Copying build files to root..."
+# cp -r build/* .
 
 echo "📝 Adding files to git..."
 git add .
