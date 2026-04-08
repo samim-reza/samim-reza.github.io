@@ -119,7 +119,7 @@ function Projects() {
                 <div className="project-header">
                   <div>
                     <span className="project-category">Web Development</span>
-                    <h3 className="project-title">Hasib School Management System</h3>
+                    <h3 className="project-title">Hasib Academic System</h3>
                   </div>
                   <span className="project-date"><i className="far fa-calendar"></i> 2026</span>
                 </div>
