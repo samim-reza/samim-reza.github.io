@@ -11,7 +11,7 @@ echo "📝 Adding files to git..."
 git add .
 
 echo "💬 Committing changes..."
-git commit -m "Deploy: Update portfolio site"
+git commit -m "Project count updated"
 
 echo "🌐 Pushing to GitHub..."
 git push

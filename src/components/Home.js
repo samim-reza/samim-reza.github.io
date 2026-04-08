@@ -88,7 +88,7 @@ function Home({ onNavigate }) {
               <i className="fas fa-project-diagram"></i>
             </div>
             <div className="stat-content">
-              <h3 className="stat-number">7+</h3>
+              <h3 className="stat-number">13+</h3>
               <p className="stat-label">Projects Completed</p>
             </div>
           </div>
