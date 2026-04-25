@@ -20,11 +20,13 @@ function Home({ onNavigate }) {
             <div className="about-intro">
               <p className="about-label">Welcome to my portfolio</p>
               <h2 className="about-title">
-                Computer Science & Engineering Student
+                Machine Learning Engineer | CSE Graduate
               </h2>
             </div>
             
             <p className="about-description">
+              Currently working as a Machine Learning Engineer at Brandifies.
+              {' '}
               Focused on competitive programming, robotics, and applied AI & ML. 
               As a three-time ICPC regionalist with 1000+ problems solved, I combine 
               theoretical knowledge with practical applications in machine learning and robotics. 
@@ -99,7 +101,7 @@ function Home({ onNavigate }) {
             </div>
             <div className="stat-content">
               <h3 className="stat-number">3.80</h3>
-              <p className="stat-label">Current CGPA</p>
+              <p className="stat-label">Graduation CGPA</p>
             </div>
           </div>
         </div>

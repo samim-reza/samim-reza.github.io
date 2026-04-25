@@ -14,8 +14,9 @@ function About() {
             <div className="about-text" style={{gridColumn: '1 / -1', marginBottom: '24px'}}>
               <h3>Hello, I'm Samim Reza</h3>
               <p>
-                I am a Computer Science & Engineering student at Green University of
-                Bangladesh with a strong passion for programming, machine learning, robotics, and
+                I am a Computer Science & Engineering graduate from Green University of
+                Bangladesh and currently working as a Machine Learning Engineer at Brandifies.
+                I have a strong passion for programming, machine learning, robotics, and
                 problem-solving. As a three-time ICPC regionalist with over 1000+
                 problems solved on various online judges, I have demonstrated
                 excellence in competitive programming.
@@ -54,7 +55,7 @@ function About() {
                 <i className="fas fa-graduation-cap"></i>
                 <div className="stat-info">
                   <h4 className="stat-number">3.80</h4>
-                  <p className="stat-label">Current CGPA</p>
+                  <p className="stat-label">Graduation CGPA</p>
                 </div>
               </div>
             </div>

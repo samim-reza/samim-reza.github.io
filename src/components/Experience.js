@@ -3,6 +3,16 @@ import React from 'react';
 function Experience() {
   const experiences = [
     {
+      title: "Machine Learning Engineer",
+      date: "Feb 2025 - Present",
+      subtitle: "Brandifies",
+      points: [
+        "Built end-to-end ML pipelines: data preprocessing, feature engineering, model training, and evaluation",
+        "Developed predictive models using XGBoost and similar boosting algorithms",
+        "Fine-tuned LLMs and implemented RAG-based chatbot systems with vector databases"
+      ]
+    },
+    {
       title: "Robotics Engineer Intern",
       date: "Jul 2025 - Sept 2025",
       subtitle: "RoboTech Valley",
