@@ -145,6 +145,55 @@ function Projects() {
 
             <div className="project-card">
               <div className="project-icon">
+                <i className="fas fa-certificate"></i>
+              </div>
+              <div className="project-content">
+                <div className="project-header">
+                  <div>
+                    <span className="project-category">SaaS • Web Application</span>
+                    <h3 className="project-title">TrueDoc</h3>
+                  </div>
+                  <span className="project-date"><i className="far fa-calendar"></i> 2026</span>
+                </div>
+                <p className="project-description">
+                  A Django + React SaaS app for digital document attestation in Bangladesh. Replaces repetitive manual attestation with a one-time digital upload verified by authorized officers, providing a permanent verification number and QR-backed record.
+                </p>
+                <div className="project-tech">
+                  <span className="tech-tag">Django</span>
+                  <span className="tech-tag">React</span>
+                  <span className="tech-tag">TypeScript</span>
+                  <span className="tech-tag">Tailwind CSS</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="project-icon">
+                <i className="fas fa-bullhorn"></i>
+              </div>
+              <div className="project-content">
+                <div className="project-header">
+                  <div>
+                    <span className="project-category">Web Automation • Dashboard</span>
+                    <h3 className="project-title">GoUp</h3>
+                  </div>
+                  <span className="project-date"><i className="far fa-calendar"></i> 2026</span>
+                </div>
+                <p className="project-description">
+                  A Django-based dashboard for Facebook Lead Ads automation. Connects a Facebook account, syncs pages and forms, ingests leads via webhooks, and triggers automated follow-up messaging rules (email, SMS, WhatsApp).
+                </p>
+                <div className="project-tech">
+                  <span className="tech-tag">Django</span>
+                  <span className="tech-tag">Celery</span>
+                  <span className="tech-tag">Redis</span>
+                  <span className="tech-tag">Meta Graph API</span>
+                  <span className="tech-tag">PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="project-icon">
                 <i className="fas fa-brain"></i>
               </div>
               <div className="project-content">
