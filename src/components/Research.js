@@ -5,9 +5,19 @@ function Research() {
     <section className="panel-section">
       <div className="panel-container">
         <div className="section-label">Research</div>
-        <h2 className="section-heading">Research Ongoing (Two Submitted)</h2>
+        <h2 className="section-heading">Publications & Ongoing Research</h2>
 
           <div className="services-grid">
+            <div className="service-card">
+              <div className="stat-icon" style={{marginBottom: '12px'}}>
+                <i className="fas fa-file-signature"></i>
+              </div>
+              <h4>Edge Detection for Smoke-Degraded Images using Fractional Derivative</h4>
+              <p>
+                Computer Vision & Image Processing - Recently Published Paper
+              </p>
+            </div>
+
             <div className="service-card">
               <div className="stat-icon" style={{marginBottom: '12px'}}>
                 <i className="fas fa-image"></i>

@@ -11,7 +11,7 @@ echo "📝 Adding files to git..."
 git add .
 
 echo "💬 Committing changes..."
-git commit -m "goup, truedoc, and other updates"
+git commit -m "gpaper published update"
 
 echo "🌐 Pushing to GitHub..."
 git push
