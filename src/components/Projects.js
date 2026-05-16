@@ -132,6 +132,11 @@ function Projects() {
                   <span className="tech-tag">TypeScript</span>
                   <span className="tech-tag">Tailwind CSS</span>
                 </div>
+                  <div className="project-links">
+                  <a href="https://github.com/samim-reza/TrueDoc" target="_blank" rel="noopener noreferrer" className="project-btn secondary">
+                    <i className="fab fa-github"></i> GitHub
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -156,6 +161,11 @@ function Projects() {
                   <span className="tech-tag">Redis</span>
                   <span className="tech-tag">Meta Graph API</span>
                   <span className="tech-tag">PostgreSQL</span>
+                </div>
+                  <div className="project-links">
+                  <a href="https://github.com/samim-reza/GoUp" target="_blank" rel="noopener noreferrer" className="project-btn secondary">
+                    <i className="fab fa-github"></i> GitHub
+                  </a>
                 </div>
               </div>
             </div>

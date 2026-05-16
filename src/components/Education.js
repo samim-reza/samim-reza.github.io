@@ -14,7 +14,7 @@ function Education() {
               </div>
               <h4 style={{marginBottom: '4px'}}>B.Sc. in Computer Science and Engineering</h4>
               <div style={{color: 'var(--brand)', fontSize: '0.85rem', marginBottom: '8px', fontWeight: '600'}}>
-                Green University of Bangladesh | Jan 2022 - Present
+                Green University of Bangladesh | Jan 2022 - Dec 2025
               </div>
               <p><strong>Current CGPA:</strong> 3.80/4.00</p>
             </div>

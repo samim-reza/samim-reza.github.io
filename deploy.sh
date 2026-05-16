@@ -11,7 +11,7 @@ echo "📝 Adding files to git..."
 git add .
 
 echo "💬 Committing changes..."
-git commit -m "gpaper published update"
+git commit -m "link: Deploying latest changes to GitHub Pages"
 
 echo "🌐 Pushing to GitHub..."
 git push
