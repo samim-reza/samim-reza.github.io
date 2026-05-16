@@ -113,38 +113,6 @@ function Projects() {
 
             <div className="project-card">
               <div className="project-icon">
-                <i className="fas fa-school"></i>
-              </div>
-              <div className="project-content">
-                <div className="project-header">
-                  <div>
-                    <span className="project-category">Web Development</span>
-                    <h3 className="project-title">Hasib Academic System</h3>
-                  </div>
-                  <span className="project-date"><i className="far fa-calendar"></i> 2026</span>
-                </div>
-                <p className="project-description">
-                  A production-ready Django application for managing school workflows including admissions, student attendance, notices, teacher accounts, and finance tracking with PDF export. Tailored for Bangla-speaking users.
-                </p>
-                <div className="project-tech">
-                  <span className="tech-tag">Django 5</span>
-                  <span className="tech-tag">PostgreSQL</span>
-                  <span className="tech-tag">Tailwind</span>
-                  <span className="tech-tag">Gunicorn</span>
-                </div>
-                <div className="project-links">
-                  <a href="https://hasibislamicacademy.github.io/" target="_blank" rel="noopener noreferrer" className="project-btn primary">
-                    <i className="fas fa-external-link-alt"></i> Live
-                  </a>
-                  <a href="https://github.com/samim-reza/Hasib_School" target="_blank" rel="noopener noreferrer" className="project-btn secondary">
-                    <i className="fab fa-github"></i> GitHub
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <div className="project-icon">
                 <i className="fas fa-certificate"></i>
               </div>
               <div className="project-content">
@@ -214,6 +182,38 @@ function Projects() {
                   <span className="tech-tag">XGBoost</span>
                   <span className="tech-tag">LightGBM</span>
                   <span className="tech-tag">CatBoost</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="project-icon">
+                <i className="fas fa-school"></i>
+              </div>
+              <div className="project-content">
+                <div className="project-header">
+                  <div>
+                    <span className="project-category">Web Development</span>
+                    <h3 className="project-title">Hasib Academic System</h3>
+                  </div>
+                  <span className="project-date"><i className="far fa-calendar"></i> 2026</span>
+                </div>
+                <p className="project-description">
+                  A production-ready Django application for managing school workflows including admissions, student attendance, notices, teacher accounts, and finance tracking with PDF export. Tailored for Bangla-speaking users.
+                </p>
+                <div className="project-tech">
+                  <span className="tech-tag">Django 5</span>
+                  <span className="tech-tag">PostgreSQL</span>
+                  <span className="tech-tag">Tailwind</span>
+                  <span className="tech-tag">Gunicorn</span>
+                </div>
+                <div className="project-links">
+                  <a href="https://hasibislamicacademy.github.io/" target="_blank" rel="noopener noreferrer" className="project-btn primary">
+                    <i className="fas fa-external-link-alt"></i> Live
+                  </a>
+                  <a href="https://github.com/samim-reza/Hasib_School" target="_blank" rel="noopener noreferrer" className="project-btn secondary">
+                    <i className="fab fa-github"></i> GitHub
+                  </a>
                 </div>
               </div>
             </div>
