@@ -45,7 +45,7 @@ function Home({ onNavigate }) {
                 View Portfolio <i className="fas fa-arrow-right"></i>
               </button>
               <a 
-                href="/cv.pdf" 
+                href="/assets/documents/cv.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-text"
@@ -58,7 +58,7 @@ function Home({ onNavigate }) {
           <div className="about-right">
             <div className="about-image-wrapper">
               <div className="about-image">
-                <img src="/samim.jpeg" alt="Samim Reza" className="profile-img" />
+                <img src="/assets/images/samim.jpeg" alt="Samim Reza" className="profile-img" />
               </div>
             </div>
           </div>

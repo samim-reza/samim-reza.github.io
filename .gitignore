@@ -1,48 +1,40 @@
-# LaTeX
-main.tex
-
-# PDF
-biodata.pdf
-
 # Dependencies
-node_modules/
+/node_modules
 /.pnp
-.pnp.js
+/.pnp.js
 
-# Testing
+# Local build output
+/build
 /coverage
 
-# Production build folder (not the deployed files)
-/build
+# Runtime logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Source files backup
-old_static_site/
-old_static_files/
-
-# Misc
-.DS_Store
+# Environment files
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Package manager caches
+/.npm
+/.eslintcache
 
-# IDE
+# Editor and OS files
+.DS_Store
+Thumbs.db
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Logs
-logs
-*.log
+# Legacy local backup folders
+/old_static_site
+/old_static_files

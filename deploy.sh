@@ -1,20 +1,27 @@
 #!/bin/bash
-# Deploy React app to GitHub Pages
 
-echo "🚀 Building React app..."
+set -euo pipefail
+
+echo "Building React app..."
 npm run build
 
-echo "📦 Copying build files to root..."
+echo "Refreshing root deployment files..."
+rm -rf static
+rm -f asset-manifest.json index.html manifest.json cv.pdf cvi.pdf cva.pdf samim.jpeg
 cp -r build/* .
 
-echo "📝 Adding files to git..."
+echo "Staging changes..."
 git add .
 
-echo "💬 Committing changes..."
-git commit -m "link: Deploying latest changes to GitHub Pages"
+if git diff --cached --quiet; then
+  echo "No deployment changes to commit."
+  exit 0
+fi
 
-echo "🌐 Pushing to GitHub..."
+echo "Creating deployment commit..."
+git commit -m "chore: deploy latest portfolio build"
+
+echo "Pushing to GitHub..."
 git push
 
-echo "✅ Deployment complete!"
-echo "🔗 Your site will be live at: https://samim-reza.github.io"
+echo "Deployment complete: https://samim-reza.github.io"
