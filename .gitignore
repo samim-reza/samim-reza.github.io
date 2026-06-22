@@ -3,7 +3,7 @@
 /.pnp
 /.pnp.js
 
-# Local build output
+# Build output
 /build
 /coverage
 
@@ -34,6 +34,11 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
 
 # Legacy local backup folders
 /old_static_site

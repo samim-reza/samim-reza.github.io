@@ -14,7 +14,7 @@ function Education() {
               </div>
               <h4 style={{marginBottom: '4px'}}>B.Sc. in Computer Science and Engineering</h4>
               <div style={{color: 'var(--brand)', fontSize: '0.85rem', marginBottom: '8px', fontWeight: '600'}}>
-                Green University of Bangladesh | Jan 2022 - Dec 2025
+                Green University of Bangladesh | 2022 - 2025
               </div>
               <p><strong>Current CGPA:</strong> 3.80/4.00</p>
             </div>
@@ -25,7 +25,7 @@ function Education() {
               </div>
               <h4 style={{marginBottom: '4px'}}>Higher Secondary School Certificate</h4>
               <div style={{color: 'var(--brand)', fontSize: '0.85rem', marginBottom: '8px', fontWeight: '600'}}>
-                Government Bangabandhu College, Gopalganj | Apr 2017 - Mar 2019
+                Government Bangabandhu College | 2017 - 2019
               </div>
               <p><strong>GPA:</strong> 4.75/5.00</p>
             </div>
@@ -36,7 +36,7 @@ function Education() {
               </div>
               <h4 style={{marginBottom: '4px'}}>Secondary School Certificate</h4>
               <div style={{color: 'var(--brand)', fontSize: '0.85rem', marginBottom: '8px', fontWeight: '600'}}>
-                S.M. Model Govt. High School, Gopalganj | Jan 2012 - Mar 2017
+                S. M. Model Govt. High School | 2012 - 2017
               </div>
               <p><strong>GPA:</strong> 5.00/5.00</p>
             </div>

@@ -20,18 +20,19 @@ function Home({ onNavigate }) {
             <div className="about-intro">
               <p className="about-label">Welcome to my portfolio</p>
               <h2 className="about-title">
-                Machine Learning Engineer | CSE Graduate
+                Lead Engineer | Machine Learning Engineer
               </h2>
             </div>
             
             <p className="about-description">
-              Currently working as a Machine Learning Engineer at Brandifies.
+              Lead Engineer at SolaneCode building a live restaurant AI phone receptionist SaaS,
+              and Machine Learning Engineer at Brandifies.
               {' '}
-              Focused on competitive programming, robotics, and applied AI & ML. 
-              As a three-time ICPC regionalist with 1000+ problems solved, I combine 
-              theoretical knowledge with practical applications in machine learning and robotics. 
+              Focused on competitive programming, voice AI, robotics, and applied ML.
+              As a three-time ICPC regionalist with 1000+ problems solved, I combine
+              theoretical knowledge with practical applications in AI and robotics.
               Try my{' '}
-              <a href="https://samim-chatbot-app.azurewebsites.net/" target="_blank" rel="noopener noreferrer" className="inline-link">
+              <a href="https://samimreza.me/chat" target="_blank" rel="noopener noreferrer" className="inline-link">
                 AI Assistant
               </a>{' '}
               when I am not available.
@@ -45,7 +46,7 @@ function Home({ onNavigate }) {
                 View Portfolio <i className="fas fa-arrow-right"></i>
               </button>
               <a 
-                href="/assets/documents/cv.pdf" 
+                href="/cv.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-text"

@@ -48,9 +48,9 @@ function Achievements() {
               </div>
               <div className="achievement-content">
                 <span className="achievement-badge">Academic Excellence</span>
-                <h4>Vice Chancellor's & DEAN's Award</h4>
+                <h4>Vice Chancellor's Award for Academic Excellence</h4>
                 <p>
-                  Received prestigious awards for outstanding academic performance.
+                  Received the Vice Chancellor's Award for outstanding academic performance.
                 </p>
               </div>
             </div>

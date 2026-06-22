@@ -1,27 +1,15 @@
 #!/bin/bash
-
 set -euo pipefail
 
-echo "Building React app..."
-npm run build
+MSG="${1:-Update portfolio}"
 
-echo "Refreshing root deployment files..."
-rm -rf static
-rm -f asset-manifest.json index.html manifest.json cv.pdf cvi.pdf cva.pdf samim.jpeg
-cp -r build/* .
-
-echo "Staging changes..."
 git add .
-
 if git diff --cached --quiet; then
-  echo "No deployment changes to commit."
+  echo "Nothing to commit."
   exit 0
 fi
 
-echo "Creating deployment commit..."
-git commit -m "chore: deploy latest portfolio build"
-
-echo "Pushing to GitHub..."
+git commit -m "$MSG"
 git push
 
-echo "Deployment complete: https://samim-reza.github.io"
+echo "Pushed. Site will update at https://samim-reza.github.io"

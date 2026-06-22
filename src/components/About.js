@@ -15,17 +15,17 @@ function About() {
               <h3>Hello, I'm Samim Reza</h3>
               <p>
                 I am a Computer Science & Engineering graduate from Green University of
-                Bangladesh and currently working as a Machine Learning Engineer at Brandifies.
-                I have a strong passion for programming, machine learning, robotics, and
-                problem-solving. As a three-time ICPC regionalist with over 1000+
-                problems solved on various online judges, I have demonstrated
+                Bangladesh, currently Lead Engineer at SolaneCode and Machine Learning
+                Engineer at Brandifies. I have a strong passion for programming, voice AI,
+                machine learning, robotics, and problem-solving. As a three-time ICPC
+                regionalist with over 1000+ problems solved, I have demonstrated
                 excellence in competitive programming.
               </p>
               <p>
                 Having served as a Teaching Assistant, Programming Trainer,
                 and Robotics Engineer Intern, I have gained valuable experience
                 tackling challenging problems and sharing my knowledge with others. My technical
-                expertise spans various programming languages, LLM integration, and competition.
+                expertise spans LLM integration, RAG systems, voice AI workflows, and robotics.
               </p>
             </div>
 
@@ -47,7 +47,7 @@ function About() {
               <div className="stat-card">
                 <i className="fas fa-project-diagram"></i>
                 <div className="stat-info">
-                  <h4 className="stat-number">7+</h4>
+                  <h4 className="stat-number">13+</h4>
                   <p className="stat-label">Projects Completed</p>
                 </div>
               </div>

@@ -51,7 +51,7 @@ function ChatWidget() {
           </div>
           <div className="chat-body">
             <iframe 
-              src="https://samim-chatbot-app.azurewebsites.net/" 
+              src="https://samimreza.me/chat" 
               title="Chat with AI Assistant" 
               frameBorder="0"
               style={{

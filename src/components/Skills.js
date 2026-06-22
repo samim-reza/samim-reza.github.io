@@ -19,7 +19,6 @@ function Skills() {
                 <span className="skill-badge">Python</span>
                 <span className="skill-badge">Java</span>
                 <span className="skill-badge">JavaScript</span>
-                <span className="skill-badge">PHP</span>
               </div>
             </div>
 
@@ -42,17 +41,31 @@ function Skills() {
 
             <div className="skill-group">
               <div className="skill-group-header">
+                <i className="fas fa-microphone"></i>
+                <h3>Voice AI</h3>
+              </div>
+              <div className="skills-tags">
+                <span className="skill-badge">OpenAI Realtime</span>
+                <span className="skill-badge">Twilio Media Streams</span>
+                <span className="skill-badge">Tool-calling Agents</span>
+                <span className="skill-badge">Chroma-backed RAG</span>
+              </div>
+            </div>
+
+            <div className="skill-group">
+              <div className="skill-group-header">
                 <i className="fas fa-globe"></i>
-                <h3>Web & Data</h3>
+                <h3>Web & Backend</h3>
               </div>
               <div className="skills-tags">
                 <span className="skill-badge">Django</span>
                 <span className="skill-badge">FastAPI</span>
+                <span className="skill-badge">Next.js</span>
+                <span className="skill-badge">React</span>
+                <span className="skill-badge">REST APIs</span>
                 <span className="skill-badge">PostgreSQL</span>
                 <span className="skill-badge">MySQL</span>
-                <span className="skill-badge">Kaggle</span>
-                <span className="skill-badge">Machine Learning</span>
-                <span className="skill-badge">Data Analysis</span>
+                <span className="skill-badge">PWA</span>
               </div>
             </div>
 
@@ -62,18 +75,23 @@ function Skills() {
                 <h3>Tools & Platforms</h3>
               </div>
               <div className="skills-tags">
-                <span className="skill-badge">ROS</span>
                 <span className="skill-badge">Git</span>
                 <span className="skill-badge">Docker</span>
-                <span className="skill-badge">LaTeX</span>
+                <span className="skill-badge">Celery</span>
+                <span className="skill-badge">Redis</span>
+                <span className="skill-badge">Twilio</span>
+                <span className="skill-badge">Stripe</span>
+                <span className="skill-badge">Meta Graph API</span>
                 <span className="skill-badge">Linux</span>
+                <span className="skill-badge">LaTeX</span>
+                <span className="skill-badge">Supabase</span>
                 <span className="skill-badge">Render</span>
                 <span className="skill-badge">Arduino</span>
                 <span className="skill-badge">Raspberry Pi</span>
                 <span className="skill-badge">Jetson</span>
                 <span className="skill-badge">ESP32</span>
                 <span className="skill-badge">Azure</span>
-                <span className="skill-badge">PWA</span>
+                <span className="skill-badge">Digital Ocean</span>
               </div>
             </div>
 

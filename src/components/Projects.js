@@ -21,17 +21,16 @@ function Projects() {
                   <span className="project-date"><i className="far fa-calendar"></i> 2025</span>
                 </div>
                 <p className="project-description">
-                  Developed a custom AI assistant using LangChain, RAG architecture, and Vector Databases.
-                  Deployed on Azure with Pinecone for efficient knowledge retrieval and context-aware conversations.
+                  Built an LLM-powered chatbot with retrieval-augmented generation for personalized assistance, deployed at samimreza.me/chat.
                 </p>
                 <div className="project-tech">
                   <span className="tech-tag">Python</span>
                   <span className="tech-tag">LangChain</span>
                   <span className="tech-tag">RAG</span>
-                  <span className="tech-tag">Azure</span>
+                  <span className="tech-tag">LLM</span>
                 </div>
                 <div className="project-links">
-                  <a href="https://samim-chatbot-app.azurewebsites.net/" target="_blank" rel="noopener noreferrer" className="project-btn primary">
+                  <a href="https://samimreza.me/chat" target="_blank" rel="noopener noreferrer" className="project-btn primary">
                     <i className="fas fa-external-link-alt"></i> Live Demo
                   </a>
                   <a href="https://github.com/samim-reza/MyChatBot" target="_blank" rel="noopener noreferrer" className="project-btn secondary">
@@ -90,18 +89,12 @@ function Projects() {
                   <span className="project-date"><i className="far fa-calendar"></i> 2025</span>
                 </div>
                 <p className="project-description">
-                  Offline-first medical consultation and triage web app designed for rural/low-connectivity
-                  environments. Features AI-powered medical consultations using Qwen3-VL-2B, bilingual support
-                  (Bengali/English), and smart offline sync. Built for FutureBuilders2025 to address healthcare
-                  accessibility in Bangladesh's rural regions.
+                  Offline-first PWA for rural healthcare with AI-assisted triage capabilities using Qwen3-VL.
                 </p>
                 <div className="project-tech">
                   <span className="tech-tag">FastAPI</span>
-                  <span className="tech-tag">PWA</span>
-                  <span className="tech-tag">Ollama</span>
-                  <span className="tech-tag">IndexedDB</span>
-                  <span className="tech-tag">MySQL</span>
                   <span className="tech-tag">Qwen3-VL</span>
+                  <span className="tech-tag">PWA</span>
                 </div>
                 <div className="project-links">
                   <a href="https://github.com/samim-reza/FutureBuilders2025_GreenU_Tensors" target="_blank" rel="noopener noreferrer" className="project-btn primary">
@@ -124,13 +117,14 @@ function Projects() {
                   <span className="project-date"><i className="far fa-calendar"></i> 2026</span>
                 </div>
                 <p className="project-description">
-                  A Django + React SaaS app for digital document attestation in Bangladesh. Replaces repetitive manual attestation with a one-time digital upload verified by authorized officers, providing a permanent verification number and QR-backed record.
+                  SaaS for digital document attestation in Bangladesh with QR-backed verification, role-based access (citizen/verifier/org), JWT auth, and BDT payment model.
                 </p>
                 <div className="project-tech">
                   <span className="tech-tag">Django</span>
                   <span className="tech-tag">React</span>
-                  <span className="tech-tag">TypeScript</span>
-                  <span className="tech-tag">Tailwind CSS</span>
+                  <span className="tech-tag">DRF</span>
+                  <span className="tech-tag">SimpleJWT</span>
+                  <span className="tech-tag">PostgreSQL</span>
                 </div>
                   <div className="project-links">
                   <a href="https://github.com/samim-reza/TrueDoc" target="_blank" rel="noopener noreferrer" className="project-btn secondary">
@@ -153,14 +147,14 @@ function Projects() {
                   <span className="project-date"><i className="far fa-calendar"></i> 2026</span>
                 </div>
                 <p className="project-description">
-                  A Django-based dashboard for Facebook Lead Ads automation. Connects a Facebook account, syncs pages and forms, ingests leads via webhooks, and triggers automated follow-up messaging rules (email, SMS, WhatsApp).
+                  For Lead Ads automation; syncs pages/forms via Meta API, webhooks, triggers SMS follow-ups with Celery and Redis.
                 </p>
                 <div className="project-tech">
                   <span className="tech-tag">Django</span>
                   <span className="tech-tag">Celery</span>
                   <span className="tech-tag">Redis</span>
                   <span className="tech-tag">Meta Graph API</span>
-                  <span className="tech-tag">PostgreSQL</span>
+                  <span className="tech-tag">Twilio</span>
                 </div>
                   <div className="project-links">
                   <a href="https://github.com/samim-reza/GoUp" target="_blank" rel="noopener noreferrer" className="project-btn secondary">
@@ -183,9 +177,7 @@ function Projects() {
                   <span className="project-date"><i className="far fa-calendar"></i> 2025</span>
                 </div>
                 <p className="project-description">
-                  Built a multi-class classifier for BAIC 2025 hackathon. Handled 40-50% missing data,
-                  engineered 55 features from 19 variables, and implemented ensemble models achieving
-                  14.5% improvement over baseline.
+                  Built an ensemble ML classifier with 55 engineered features, achieving 14.5% accuracy gain at BAIC 2025.
                 </p>
                 <div className="project-tech">
                   <span className="tech-tag">Python</span>
@@ -241,14 +233,11 @@ function Projects() {
                   <span className="project-date"><i className="far fa-calendar"></i> 2025</span>
                 </div>
                 <p className="project-description">
-                  Built a functional Mars Rover using C++, Python, and ROS for autonomous navigation.
-                  Implemented sensor integration, motor control systems, and real-time decision-making algorithms.
+                  Developed a ROS-based autonomous navigation system for Mars rover simulation.
                 </p>
                 <div className="project-tech">
-                  <span className="tech-tag">C++</span>
-                  <span className="tech-tag">Python</span>
                   <span className="tech-tag">ROS</span>
-                  <span className="tech-tag">IoT</span>
+                  <span className="tech-tag">Embedded Systems</span>
                 </div>
                 <div className="project-links">
                   <a href="https://github.com/samim-reza/Rover-robot" target="_blank" rel="noopener noreferrer" className="project-btn secondary">
@@ -300,7 +289,7 @@ function Projects() {
                   <span className="project-date"><i className="far fa-calendar"></i> 2026</span>
                 </div>
                 <p className="project-description">
-                  Collaborative financial tracker with consensus-based voting.
+                  Built a collaborative financial tracking web app with consensus-based voting for deposits, loans, repayments, and investments.
                 </p>
                 <div className="project-tech">
                   <span className="tech-tag">Django</span>

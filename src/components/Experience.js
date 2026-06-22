@@ -3,13 +3,23 @@ import React from 'react';
 function Experience() {
   const experiences = [
     {
+      title: "Lead Engineer",
+      date: "May 2026 - Present",
+      subtitle: "SolaneCode, New York",
+      link: "https://remitjob.com/",
+      linkLabel: "Live Platform",
+      points: [
+        "Lead engineering for a live restaurant AI phone receptionist SaaS sold in New York",
+        "Built and own the AI voice workflow, frontend, backend, QA, CRM, menu, kitchen flow, and reporting systems"
+      ]
+    },
+    {
       title: "Machine Learning Engineer",
-      date: "Feb 2025 - Present",
+      date: "Dec 2025 - Present",
       subtitle: "Brandifies",
       points: [
-        "Built end-to-end ML pipelines: data preprocessing, feature engineering, model training, and evaluation",
-        "Developed predictive models using XGBoost and similar boosting algorithms",
-        "Fine-tuned LLMs and implemented RAG-based chatbot systems with vector databases"
+        "Built end-to-end ML pipelines, fine-tuned LLMs, and implemented RAG-based chatbot systems",
+        "Developed predictive models using boosting algorithms"
       ]
     },
     {
@@ -17,7 +27,7 @@ function Experience() {
       date: "Jul 2025 - Sept 2025",
       subtitle: "RoboTech Valley",
       points: [
-        "Designing robotics modules using embedded systems and ROS for autonomous navigation"
+        "Designed robotics modules using embedded systems and ROS for autonomous navigation"
       ]
     },
     {
@@ -64,6 +74,9 @@ function Experience() {
                 </div>
                 <div className="timeline-subtitle" style={{color: 'var(--brand)', fontSize: '0.85rem', marginBottom: '8px', fontWeight: '600'}}>
                   {exp.subtitle} | {exp.date}
+                  {exp.link && (
+                    <> | <a href={exp.link} target="_blank" rel="noopener noreferrer" className="inline-link">{exp.linkLabel}</a></>
+                  )}
                 </div>
                 <ul className="timeline-list" style={{paddingLeft: '16px', color: 'var(--muted)', fontSize: '0.92rem', margin: '0'}}>
                   {exp.points.map((point, idx) => (
