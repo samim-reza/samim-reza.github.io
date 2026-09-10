@@ -11,5 +11,6 @@ fi
 
 git commit -m "$MSG"
 git push
+#git push origin main
 
 echo "Pushed. Site will update at https://samim-reza.github.io"

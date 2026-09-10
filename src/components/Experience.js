@@ -6,7 +6,7 @@ function Experience() {
       title: "Lead Engineer",
       date: "May 2026 - Present",
       subtitle: "SolaneCode, New York",
-      link: "https://remitjob.com/",
+      link: "https://restaurant.sloancode.com/",
       linkLabel: "Live Platform",
       points: [
         "Lead engineering for a live restaurant AI phone receptionist SaaS sold in New York",
